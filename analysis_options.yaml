@@ -1,0 +1,82 @@
+
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  # strong-mode:
+  #  implicit-dynamic: false
+  #  implicit-casts: false
+  errors:
+    # treat missing required parameters as a warning (not a hint)
+    missing_required_param: warning
+    # treat missing returns as a warning (not a hint)
+    missing_return: warning
+    # Otherwise it causes the import of all_lint_rules to warn because of some rules conflicts.
+    # The conflicts are fixed in this file instead, so we can safely ignore the warning.
+    included_file_warning: ignore
+    include_file_not_found: ignore
+    todo: ignore
+  exclude:
+    - "bin/cache/**"
+    - "**/*.freezed.dart"
+    - "**/*.g.dart"
+    - "**/*.gen.dart"
+    - "**/*.gql.dart"
+    - "**/*.config.dart"
+    - "**/l10n/generated/**"
+    - "test/**/generated/**"
+    - "workers/**"
+    - "submodules/**"
+    - "lib/core/components/src/supernova/**"
+    - "build/**"
+
+linter:
+  rules:
+    # false positives
+    prefer_const_declarations: false
+    sort_pub_dependencies: false
+    missing_whitespace_between_adjacent_strings: false
+
+    prefer_double_quotes: false
+    prefer_relative_imports: false
+    prefer_const_constructors: false
+    always_put_control_body_on_new_line: false
+    unnecessary_final: false
+    prefer_expression_function_bodies: false
+    avoid_redundant_argument_values: false
+    diagnostic_describe_all_properties: false
+    flutter_style_todos: false
+    avoid_types_on_closure_parameters: false
+    do_not_use_environment: false
+    avoid_catches_without_on_clauses: false
+    omit_local_variable_types: false
+    avoid_function_literals_in_foreach_calls: false
+    avoid_annotating_with_dynamic: false
+    prefer_mixin: false
+    avoid_multiple_declarations_per_line: false
+    prefer_final_parameters: false
+    library_private_types_in_public_api: false
+    depend_on_referenced_packages: false
+
+    # Opinionated rules
+    prefer_if_elements_to_conditional_expressions: false
+    always_specify_types: false
+    constant_identifier_names: false
+    public_member_api_docs: false
+    avoid_returning_null: false
+    unsafe_html: false
+
+    # Desirable rules that would require significant refactoring (remove them eventually?)
+    # None of these should be rules that could prevent bugs from finding their way into the codebase
+    parameter_assignments: false
+    lines_longer_than_80_chars: false
+    prefer_asserts_with_message: false
+    always_put_required_named_parameters_first: false
+    use_key_in_widget_constructors: false
+    cascade_invocations: false
+    avoid_positional_boolean_parameters: false
+    type_annotate_public_apis: false
+    avoid_escaping_inner_quotes: false
+    prefer_constructors_over_static_methods: false
+    comment_references: false
+    implementation_imports: false
+    unnecessary_raw_strings: false
